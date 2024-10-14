@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<GridPane fx:id="root" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1">
+  <columnConstraints>
+    <ColumnConstraints halignment="CENTER" />
+      <ColumnConstraints hgrow="SOMETIMES" />
+    <ColumnConstraints hgrow="SOMETIMES" />
+      <ColumnConstraints hgrow="SOMETIMES" />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints fillWidth="false" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints vgrow="SOMETIMES" />
+    <RowConstraints vgrow="SOMETIMES" />
+      <RowConstraints vgrow="SOMETIMES" />
+      <RowConstraints vgrow="SOMETIMES" />
+      <RowConstraints vgrow="SOMETIMES" />
+    <RowConstraints vgrow="SOMETIMES" />
+      <RowConstraints vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Label text="Servidor SMTP:">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+      </Label>
+      <Label text="Usar Conexión SSL:" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets top="5.0" />
+         </GridPane.margin>
+      </Label>
+      <Label text="Remitente(From):" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+      </Label>
+      <Label text="Destinatario(To):" GridPane.rowIndex="3">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+      </Label>
+      <Label text="Asunto(Subject):" GridPane.rowIndex="4">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+      </Label>
+      <TextArea fx:id="messageTextArea" prefHeight="200.0" prefWidth="200.0" promptText="Mensaje" GridPane.columnSpan="6" GridPane.rowIndex="5">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+      </TextArea>
+      <TextField fx:id="serverIPText" promptText="Nombre o IP del servidor" GridPane.columnIndex="1" GridPane.columnSpan="4">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+      </TextField>
+      <TextField fx:id="fromEmailText" maxWidth="1.7976931348623157E308" promptText="Email del Remitente" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" top="5.0" />
+         </GridPane.margin>
+      </TextField>
+      <TextField fx:id="subjectText" promptText="Asunto del mensaje" GridPane.columnIndex="1" GridPane.columnSpan="5" GridPane.rowIndex="4">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+      </TextField>
+      <TextField fx:id="toEmailText" promptText="Email del Destinatario" GridPane.columnIndex="1" GridPane.columnSpan="5" GridPane.rowIndex="3">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+      </TextField>
+      <TextField fx:id="serverPortText" promptText="Puerto" GridPane.columnIndex="5">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+      </TextField>
+      <CheckBox fx:id="conectionSSLCheckbox" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+      </CheckBox>
+      <VBox GridPane.columnIndex="6" GridPane.rowSpan="3">
+         <children>
+            <Button fx:id="sendEmailButton" defaultButton="true" mnemonicParsing="false" onAction="#setSendEmailButton" text="Envíar">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="emptyEmailButton" mnemonicParsing="false" onAction="#setEmptyEmailButton" text="Vaciar">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="closeEmailButton" mnemonicParsing="false" onAction="#setCloseEmailButton" text="Cerrar">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+      <PasswordField fx:id="emailPasswordField" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" promptText="Contraseña" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+      </PasswordField>
+   </children>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+</GridPane>
